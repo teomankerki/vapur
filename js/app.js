@@ -526,6 +526,7 @@
   Object.keys(STATIONS).forEach(function (id) {
     var s = STATIONS[id];
     var n = s.lines.length;
+    if (id === "ortakoy") n = Math.max(n, 8); // Make Ortakoy a big station
     var isHub = n >= 4;
     var radius = 3.5 + Math.min(n, 10) * 0.55;
 
