@@ -476,7 +476,13 @@
   })();
 
   // ---------------- Map setup ----------------
-  var map = L.map("map", { zoomControl: false, minZoom: 9, maxZoom: 17 });
+  var map = L.map("map", {
+    zoomControl: false,
+    minZoom: 9,
+    maxZoom: 13,
+    maxBounds: [[40.20, 27.50], [41.50, 30.50]],
+    maxBoundsViscosity: 1.0
+  });
 
   L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -621,7 +627,7 @@
   function focusLine(id) {
     if (!lineVisible[id]) setLineVisible(id, true);
     var poly = lineLayers[id];
-    map.fitBounds(poly.getBounds(), { padding: [40, 40], maxZoom: 14 });
+    map.fitBounds(poly.getBounds(), { padding: [40, 40], maxZoom: 13 });
     highlightLine(id, true);
     setTimeout(function () { highlightLine(id, false); }, 1600);
 
