@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Vapur · Şehir Hatları İnteraktif Sefer Haritası</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+
+  <header id="header">
+    <button id="sidebarToggle" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="brand">
+      <span class="brand-mark">VAPUR</span>
+      <span class="brand-sub">Şehir Hatları İnteraktif Sefer Haritası</span>
+    </div>
+    <div class="search-wrap">
+      <input id="searchInput" type="text" placeholder="İskele ara... (örn. Kadıköy)" autocomplete="off">
+      <div id="searchResults"></div>
+    </div>
+  </header>
+
+  <div id="body">
+    <div id="sidebarScrim"></div>
+    <aside id="sidebar">
+      <div class="sidebar-actions">
+        <button id="showAll" class="btn">Tümünü Göster</button>
+        <button id="hideAll" class="btn btn-ghost">Tümünü Gizle</button>
+      </div>
+      <div id="lineGroups"></div>
+      <div class="sidebar-footnote">
+        <p><strong>BİLGİLENDİRME</strong></p>
+        <p>* Boğaz Hattımızdaki uğrama iskeleleri sefer saatlerine göre farklılık göstermektedir.</p>
+        <p>Kaynak: İBB Şehir Hatları Sefer Haritası (2025). Konumlar OpenStreetMap verileriyle yaklaşık olarak coğrafi referanslandırılmıştır.</p>
+        <p>Developed by Teoman Kerki</p>
+        <p>İletişim: <a href="mailto:teoman@teomankerki.com">teoman@teomankerki.com</a></p>
+        <p><a href="#" id="privacyLink">Gizlilik Politikası</a></p>
+      </div>
+    </aside>
+
+    <main id="mapContainer">
+      <div id="map"></div>
+    </main>
+  </div>
+</div>
+
+<div id="privacyOverlay" class="modal-overlay">
+  <div class="modal-box">
+    <button id="privacyClose" class="modal-close" aria-label="Kapat">&times;</button>
+    <h2>Gizlilik Politikası</h2>
+    <p><em>Son Güncelleme: 26.06.2026</em></p>
+    <p>Bu internet sitesi, ziyaretçilerinin gizliliğine önem verir.</p>
+    <h3>Kişisel Veri İşlenmemektedir</h3>
+    <p>Bu internet sitesi;</p>
+    <ul>
+      <li>Herhangi bir kişisel veri toplamaz.</li>
+      <li>Üyelik veya hesap oluşturma imkânı sunmaz.</li>
+      <li>İletişim formu içermez.</li>
+      <li>Çerez (cookie) kullanmaz.</li>
+      <li>Analitik, reklam veya takip araçları kullanmaz.</li>
+      <li>Ziyaretçileri tanımlamaya yönelik herhangi bir teknoloji kullanmaz.</li>
+    </ul>
+    <p>Bu nedenle, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında ziyaretçilerden herhangi bir kişisel veri işlenmemektedir.</p>
+    <h3>Üçüncü Taraf Hizmetler</h3>
+    <p>Bu internet sitesi, ziyaretçilerin kişisel verilerini işleyen herhangi bir üçüncü taraf hizmetinden yararlanmamaktadır.</p>
+    <h3>Değişiklikler</h3>
+    <p>Gizlilik Politikası gerektiğinde güncellenebilir. Güncel sürüm her zaman bu sayfada yayımlanır.</p>
+    <h3>İletişim</h3>
+    <p>Gizlilik Politikası hakkında sorularınız olması halinde aşağıdaki e-posta adresi üzerinden bizimle iletişime geçebilirsiniz:</p>
+    <p>E-posta: <a href="mailto:teoman@teomankerki.com">teoman@teomankerki.com</a></p>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
