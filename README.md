@@ -29,4 +29,6 @@ Projede herhangi bir derleyici (build tool) veya sunucu tarafı bir dil kullanı
 
 ## Lisans
 
-Bu proje kişisel kullanım ve eğitim amaçlıdır. İstanbul Şehir Hatları verileri referans alınarak oluşturulmuştur.
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır. Yazılımı özgürce kullanabilir, değiştirebilir ve dağıtabilirsiniz; tek koşul telif hakkı bildiriminin (Teoman Kerki) korunması ve eserin bana atıfta bulunulmasıdır.
+
+İstanbul Şehir Hatları verileri referans alınarak oluşturulmuştur.
